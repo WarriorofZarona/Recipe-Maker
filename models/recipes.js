@@ -11,7 +11,8 @@ const recipeSchema = new Schema({
         required: true
     },
     steps: {
-        type: Schema.Types.Array,
+        type: Map,
+        of: String,
         required: true
     },
     media: String,

@@ -1,0 +1,15 @@
+<h2>Recipes</h2>
+
+<div *ngFor="let recipe of recipes">
+
+    <!-- <p *ngIf="recipe.media">
+        <img [src]="recipe.media">
+    </p> -->
+
+    <h3>
+        <a [title]="recipe.name + ' details'">
+            {{recipe.name}}
+        </a>
+    </h3>
+
+</div>
