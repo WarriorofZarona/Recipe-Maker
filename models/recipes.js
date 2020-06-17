@@ -14,9 +14,7 @@ const recipeSchema = new Schema({
         type: Map,
         of: String,
         required: true
-    },
-    media: String,
-    Timer: Number
+    }
 })
 
 const Recipe = mongoose.model("Recipe", recipeSchema)
