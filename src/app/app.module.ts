@@ -20,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: RecipeListComponent }
+      { path: '', component: RecipeListComponent },
+      { path: 'form', component: RecipeFormComponent }
     ])
   ],
   providers: [],
