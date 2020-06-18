@@ -1,20 +1,20 @@
 <h2>Recipes</h2>
 
-<!-- <div *ngIf="recipes; then thenBlock else elseBlock"></div>
-<ng-template #thenBlock> -->
+<div *ngIf="recipes; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
 
-<div class="recipe-item" *ngFor="let recipe of recipes | async">
+    <div class="recipe-item" *ngFor="let recipe of recipes | async">
 
-    <h3>
-        <a [title]="recipe.name + ' details'">
-            {{recipe.name}}
-        </a>
-    </h3>
+        <h3>
+            <a [title]="recipe.name + ' details'">
+                {{recipe.name}}
+            </a>
+        </h3>
 
-</div>
-<!-- </ng-template>
+    </div>
+</ng-template>
 
 <ng-template #elseBlock>
     <h3>No recipes to display!</h3>
     <h4>Add a recipe to get started!</h4>
-</ng-template> -->
+</ng-template>
