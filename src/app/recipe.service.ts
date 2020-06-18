@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class RecipeService {
-  recipe = [];
+  recipes;
 
   getRecipes() {
     return this.http.get('/api/recipes')
