@@ -65,6 +65,7 @@
           "options": {
             "browserTarget": "recipe-maker:build"
           },
+          "proxyConfig": "src/proxy.conf.json",
           "configurations": {
             "production": {
               "browserTarget": "recipe-maker:build:production"

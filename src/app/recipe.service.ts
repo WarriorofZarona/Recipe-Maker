@@ -8,8 +8,7 @@ export class RecipeService {
   recipe = [];
 
   getRecipes() {
-    return
-    this.http.get('/api/recipes')
+    return this.http.get('/api/recipes')
   }
 
   constructor(

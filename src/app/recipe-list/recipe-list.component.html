@@ -1,6 +1,6 @@
 <h2>Recipes</h2>
 
-<div *ngIf="recipe; then thenBlock else elseBlock"></div>
+<div *ngIf="recipes; then thenBlock else elseBlock"></div>
 <ng-template #thenBlock>
     <div *ngFor="let recipe of recipes">
 
