@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms'
+import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms'
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-form.component.css']
 })
 export class RecipeFormComponent implements OnInit {
-  recipeForm;
+  recipeForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -17,13 +17,12 @@ export class RecipeFormComponent implements OnInit {
     this.recipeForm = this.formBuilder.group({
       name: '',
       ingredients: [],
-      steps: [{
-        title: "",
-        text: "",
-        image: "",
-        timer: ""
-      }
-      ]
+      steps: this.formBuilder.array([this.formBuilder.group({
+        title: '',
+        text: '',
+        image: '',
+        timer: ''
+      })])
     })
   }
 
