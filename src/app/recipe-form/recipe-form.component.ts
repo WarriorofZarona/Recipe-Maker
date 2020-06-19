@@ -18,7 +18,7 @@ export class RecipeFormComponent implements OnInit {
   ngOnInit(): void {
     this.recipeForm = this.formBuilder.group({
       name: '',
-      ingredients: [],
+      ingredients: this.formBuilder.array([this.formBuilder.control('')]),
       steps: this.formBuilder.array([this.formBuilder.group({
         title: '',
         text: '',

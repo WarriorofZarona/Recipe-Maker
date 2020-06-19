@@ -1,2 +1,10 @@
-<!-- <input id="recipeName" name="recipeName" class="form-control" required minlength="1" [(ngModel)]="recipe.name"
-    #name="ngModel"> -->
+<h1>Add a Recipe</h1>
+
+<form [formGroup]="recipeForm">
+    <label>
+        Name:
+        <input formCOntrolName="name" />
+    </label>
+
+
+</form>
