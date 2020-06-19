@@ -7,13 +7,12 @@ const recipeSchema = new Schema({
         required: true
     },
     ingredients: {
-        type: Schema.Types.Array,
+        type: [String],
         required: true
     },
     steps: {
-        type: Map,
-        of: String,
-        required: true
+        type: Schema.Types.Mixed,
+        require: true
     }
 })
 
