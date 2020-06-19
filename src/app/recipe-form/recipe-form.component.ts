@@ -13,7 +13,9 @@ export class RecipeFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private recipeService: RecipeService
-  ) {
+  ) { }
+
+  ngOnInit(): void {
     this.recipeForm = this.formBuilder.group({
       name: '',
       ingredients: [],
@@ -25,14 +27,8 @@ export class RecipeFormComponent implements OnInit {
       })])
     })
   }
-
-  ngOnInit(): void {
-  }
-
-  onSubmit(data) {
-
-    this.recipeForm.reset();
-
+  get steps() {
+    return this.recipeForm.get('steps') as FormArray;
   }
 
 }
