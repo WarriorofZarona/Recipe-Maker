@@ -13,13 +13,15 @@ import { AppComponent } from './app.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeFormComponent,
     RecipeListComponent,
-    TopBarComponent
+    TopBarComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     BrowserModule,
