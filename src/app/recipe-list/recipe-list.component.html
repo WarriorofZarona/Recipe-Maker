@@ -1,13 +1,13 @@
-<h2>Recipes</h2>
+<h1>Recipes</h1>
 
 <div *ngIf="recipes.length > 0; else elseBlock">
     <div class="recipe-item" *ngFor="let recipe of recipes">
 
-        <h3>
+        <h2>
             <a [title]="recipe.name + ' details'">
                 {{recipe.name}}
             </a>
-        </h3>
+        </h2>
 
     </div>
 </div>
