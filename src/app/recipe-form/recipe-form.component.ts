@@ -35,17 +35,17 @@ export class RecipeFormComponent implements OnInit {
   }
 
   addIngredient() {
-    const ingredient = this.formBuilder.control('');
+    let ingredient = this.formBuilder.control('');
 
     this.ingredients.push(ingredient);
 
   }
 
   addStep() {
-    const step = this.formBuilder.group({
+    let step = this.formBuilder.group({
       title: '',
       text: '',
-      image: ''
+      image: 'https://'
     })
 
     this.steps.push(step)

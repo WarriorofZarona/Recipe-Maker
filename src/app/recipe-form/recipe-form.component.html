@@ -14,14 +14,15 @@
 
         <div *ngFor="let ingredient of ingredients.controls; let i=index" [formGroupName]="i">
             <mat-form-field>
-                <input matInput placeholder="Ingredient:" formControlName="name" />
+                <input matInput placeholder="Ingredient:" [formControl]="ingredients.controls[i]" />
             </mat-form-field>
             <p>
                 <button mat-raised-button color="warn" (click)="deleteIngredient(i)">Remove</button>
             </p>
         </div>
     </div>
-    <p> <button mat-raised-button color="primary" (click)="addIngredient()">Add an ingredient</button>
+    <p> <button mat-raised-button color="primary" (click)="addIngredient()">Add an
+            ingredient</button>
     </p>
 
 
