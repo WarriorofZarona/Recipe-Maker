@@ -60,4 +60,14 @@ export class RecipeFormComponent implements OnInit {
     this.steps.removeAt(i);
   }
 
+  async  onSubmit() {
+    const recipe = this.recipeForm.value;
+    try {
+      await this.recipeService.addRecipe(recipe);
+    } catch (err) {
+      console.log(err);
+    }
+    this.recipeForm.reset();
+  }
+
 }

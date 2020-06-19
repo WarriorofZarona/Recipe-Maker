@@ -11,6 +11,11 @@ export class RecipeService {
     return this.http.get('/api/recipes')
   }
 
+  addRecipe(body) {
+    return this.http.post('/api/recipes', body).subscribe(data =>
+      console.log(data))
+  }
+
   constructor(
     private http: HttpClient
   ) { }

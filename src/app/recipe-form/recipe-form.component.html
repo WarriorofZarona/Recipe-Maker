@@ -9,7 +9,7 @@
     <mat-form-field>
         <input matInput placeholder="Enter the recipe's name:" formControlName="name" />
     </mat-form-field>
-
+    <hr>
     <div formArrayName="ingredients">
 
         <div *ngFor="let ingredient of ingredients.controls; let i=index" [formGroupName]="i">
@@ -25,6 +25,7 @@
             ingredient</button>
     </p>
 
+    <hr>
 
     <div formArrayName="steps">
 
@@ -52,5 +53,8 @@
         <button mat-raised-button color="primary" (click)="addStep()">Add a step</button>
 
     </div>
-
+    <hr>
+    <p>
+        <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button>
+    </p>
 </form>
