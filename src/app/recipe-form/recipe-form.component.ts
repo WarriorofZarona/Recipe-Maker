@@ -34,14 +34,14 @@ export class RecipeFormComponent implements OnInit {
     return this.recipeForm.get('steps') as FormArray;
   }
 
-  addIngredient(val) {
-    const ingredient = this.formBuilder.control(val);
+  addIngredient() {
+    const ingredient = this.formBuilder.control('');
 
     this.ingredients.push(ingredient);
 
   }
 
-  addSteps() {
+  addStep() {
     const step = this.formBuilder.group({
       title: '',
       text: '',

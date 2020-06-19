@@ -4,9 +4,52 @@
 
     Value: {{ recipeForm.value | json}}
 
+    <hr>
+
     <mat-form-field>
-        <input matInput placeholder="name" formControlName="name">
+        <input matInput placeholder="Enter the recipe's name:" formControlName="name" />
     </mat-form-field>
 
+    <div formArrayName="ingredients">
+
+        <div *ngFor="let ingredient of ingredients.controls; let i=index" [formGroupName]="i">
+            <mat-form-field>
+                <input matInput placeholder="Ingredient:" formControlName="name" />
+            </mat-form-field>
+            <p>
+                <button mat-raised-button color="warn" (click)="deleteIngredient(i)">Remove</button>
+            </p>
+        </div>
+    </div>
+    <p> <button mat-raised-button color="primary" (click)="addIngredient()">Add an ingredient</button>
+    </p>
+
+
+    <div formArrayName="steps">
+
+        <div *ngFor="let step of steps.controls; let i=index" [formGroupName]="i">
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Step Title:" formControlName="title" />
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <textarea matInput type="text" placeholder="Describe what to do:" formControlName="text"></textarea>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Link to an image here (optional):" formControlName="image" />
+                </mat-form-field>
+            </p>
+            <p>
+                <button mat-raised-button color="warn" (click)="deleteStep(i)">Remove</button>
+            </p>
+        </div>
+
+        <button mat-raised-button color="primary" (click)="addStep()">Add a step</button>
+
+    </div>
 
 </form>
