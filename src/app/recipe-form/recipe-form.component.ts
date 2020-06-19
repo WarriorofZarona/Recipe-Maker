@@ -10,6 +10,7 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeFormComponent implements OnInit {
   recipeForm: FormGroup;
+  success = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -68,6 +69,7 @@ export class RecipeFormComponent implements OnInit {
       console.log(err);
     }
     this.recipeForm.reset();
+    this.success = true;
   }
 
 }

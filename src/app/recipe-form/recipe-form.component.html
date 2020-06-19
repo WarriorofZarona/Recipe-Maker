@@ -56,5 +56,8 @@
     <hr>
     <p>
         <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button>
+
+        <span *ngIf="success" class="success">Recipe added!</span>
     </p>
+
 </form>
