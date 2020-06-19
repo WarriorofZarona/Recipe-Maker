@@ -1,10 +1,12 @@
 <h1>Add a Recipe</h1>
 
 <form [formGroup]="recipeForm">
-    <label>
-        Name:
-        <input formCOntrolName="name" />
-    </label>
+
+    Value: {{ recipeForm.value | json}}
+
+    <mat-form-field>
+        <input matInput placeholder="name" formControlName="name">
+    </mat-form-field>
 
 
 </form>
