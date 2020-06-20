@@ -1,15 +1,9 @@
 <h1>Add a Recipe</h1>
 
 <form [formGroup]="recipeForm">
-
-    Value: {{ recipeForm.value | json}}
-
-    <hr>
-
     <mat-form-field>
         <input matInput placeholder="Enter the recipe's name:" formControlName="name" />
     </mat-form-field>
-    <hr>
     <div formArrayName="ingredients">
 
         <div *ngFor="let ingredient of ingredients.controls; let i=index" [formGroupName]="i">

@@ -24,7 +24,6 @@ export class RecipeFormComponent implements OnInit {
       steps: this.formBuilder.array([])
     })
 
-    this.recipeForm.valueChanges.subscribe(console.log)
   }
 
   get ingredients() {

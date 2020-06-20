@@ -15,7 +15,6 @@ export class RecipeListComponent implements OnInit {
 
   async ngOnInit() {
     this.recipes = await this.recipeService.getRecipes().toPromise();
-    console.log("Recipe data", this.recipes)
   }
 
 }
