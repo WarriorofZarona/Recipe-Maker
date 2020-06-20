@@ -8,11 +8,11 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 // Add routes, both API and view
 require("./routes")(app);
+
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/recipe-maker", { useNewUrlParser: true, useUnifiedTopology: true });
