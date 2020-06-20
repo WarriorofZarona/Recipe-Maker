@@ -8,6 +8,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.image {
+    height: 200px;
+    width: 200px;
+}
+
 .container {
     display: flex;
     flex-direction: row;

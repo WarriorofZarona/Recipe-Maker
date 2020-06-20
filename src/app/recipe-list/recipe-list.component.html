@@ -1,13 +1,13 @@
-<h1>Recipes</h1>
+<h2>Recipes</h2>
 
 <div *ngIf="recipes.length > 0; else elseBlock">
-    <div class="recipe-item" *ngFor="let recipe of recipes">
+    <div class="recipe-item" *ngFor="let recipe of recipes; index as recipeId">
 
-        <h2>
-            <a [title]="recipe.name + ' details'">
+        <h3>
+            <a [title]="recipe.name + ' details'" [routerLink]="['/recipes',recipeId]">
                 {{recipe.name}}
             </a>
-        </h2>
+        </h3>
 
     </div>
 </div>

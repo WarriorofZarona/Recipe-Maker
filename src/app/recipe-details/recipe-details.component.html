@@ -1,1 +1,17 @@
-<p>recipe-details works!</p>
+<h1>Recipe Details</h1>
+
+<h2>{{recipe.name}}</h2>
+<h2>Ingredients:</h2>
+<div *ngFor='let ingredient of recipe.ingredients; let i=index'>
+    <h3>{{ingredient}}</h3>
+</div>
+<div *ngFor='let step of recipe.steps; let i=index'>
+
+    <h2>Step {{i + 1}}</h2>
+    <div *ngIf='step.image.length > 9'>
+        <img class='image' [src]='step.image'>
+    </div>
+    <h3>{{step.title}}</h3>
+    {{step.text}}
+    <br>
+</div>

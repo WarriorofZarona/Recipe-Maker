@@ -35,7 +35,8 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     MatChipsModule,
     RouterModule.forRoot([
       { path: '', component: RecipeListComponent },
-      { path: 'add', component: RecipeFormComponent }
+      { path: 'add', component: RecipeFormComponent },
+      { path: 'recipes/:recipeId', component: RecipeDetailsComponent }
     ])
   ],
   providers: [],

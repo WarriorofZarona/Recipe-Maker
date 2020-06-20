@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-details.component.css']
 })
 export class RecipeDetailsComponent implements OnInit {
+  recipes;
+  recipe;
+  image = false;
 
-  constructor() { }
+  constructor(
+    private recipeService: RecipeService,
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.recipes = await this.recipeService.getRecipes().toPromise();
+    await this.route.paramMap.subscribe(params => {
+      this.recipe = this.recipes[params.get('recipeId')]
+    });
   }
 
 }
